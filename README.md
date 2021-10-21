@@ -42,6 +42,11 @@ O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma ráp
 - [Google Sheets](https://docs.google.com/spreadsheets/) para a criação da apresetação do projeto.
 
 
+## Documentação do banco de dados
+
+[**Aqui**](https://dbdocs.io/willy-r/NBA) você encontrará a documentação completa do banco de dados utilizado pelo grupo 7, como esquemas, tabelas, relacionamentos, campos e seus significados e muito mais.
+
+
 ## Instalação e uso do banco de dados no MySQL Workbench
 
 ### 1. Utilizando os schemas e os dados
