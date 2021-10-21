@@ -22,14 +22,16 @@ A importância hoje em dia de conhecer os dados de uma aplicação e a partir di
   </a>
 </p>
 
-O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma rápida analisada visual nos dados, esse banco foi escolhido unanimamente pelo grupo pois atende as nossas expectativas no quesito gerar perguntas interessantes sobre o esporte e os jogos em si. Falando sobre os jogos, o banco disponibilizado cobre as estatíticas dos jogos das **finais** das temporadas de 2014 até 2019, contendo informações sobre os jogos separadamente e também informações sobre os jogadores.
+O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma rápida analisada visual nos dados, esse banco foi escolhido unanimamente pelo grupo pois atende as nossas expectativas no quesito gerar perguntas interessantes sobre o esporte e os jogos em si. Falando sobre os jogos, o banco disponibilizado cobre as estatísticas dos jogos das temporadas de 2003 até 2019, contendo informações sobre os jogos e estatíticas dos jogadores nesses jogos.
+
+> O conjunto de dados usado pelo grupo pode ser encontrado/baixado [aqui](https://drive.google.com/drive/folders/1l6YSb2y33Mo2ki6glO3ulm8CpOA24PwX?usp=sharing).
 
 
 ## Tecnologias utilizadas no projeto
 
 - [Trello](https://trello.com/) para a organização e a aplicação da metodologia **SCRUM** junto com o **Kanban** utilizadas no desenvolvimento do projeto, e que ajudou o grupo a se guiar e organizar o desenvolvimento das atividades.
 
-- [bdDiagram](https://dbdiagram.io/) para a esquematização visual do banco de dados a partir da avaliação do conjunto de dados escolhido pelo grupo.
+- [dbDiagram](https://dbdiagram.io/) para a esquematização visual do banco de dados a partir da avaliação do conjunto de dados escolhido pelo grupo.
 
 - [MySQL](https://www.mysql.com/) para a criação do banco de dados, armazenagem dos dados localmente e a análise do conjunto de dados feitas por consultas utilizando a linguagem **SQL**.
 
@@ -48,7 +50,7 @@ O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma ráp
 
 2. Carregue ele no MySQL Workbench (no canto superior esquerdo, vá em `Arquivo > Abrir script SQL` e escolha o arquivo baixado), e clique no símbolo de raio ⚡ para gerar o banco e as tabelas. Depois clique com o botão direito do mouse sobre os bancos listados na parte esquerda do programa e depois em "Refresh all", você verá o banco e as tabelas criadas.
 
-3. Baixe os arquivos `.csv` presentes na pasta [dados](dados), no MySQL Workbench, vá até as tabelas criadas, clique com o botão direito sobre uma tabela e vá em **Table data import wizard**, escolha o arquivo correspondente com a tabela criada (o arquivo e a tabela possuem o mesmo nome), clique **Next** em todas as etapas e espere o procedimento terminar.
+3. Baixe os arquivos `.csv` presentes [neste link](https://drive.google.com/drive/folders/1l6YSb2y33Mo2ki6glO3ulm8CpOA24PwX?usp=sharing), no MySQL Workbench, vá até as tabelas criadas, clique com o botão direito sobre uma tabela e vá em **Table data import wizard**, escolha o arquivo correspondente com a tabela criada (o arquivo e a tabela possuem o mesmo nome), clique **Next** em todas as etapas e espere o procedimento terminar.
 
 ### 2. Utilizando o dump do banco de dados
 
@@ -60,10 +62,10 @@ Pronto, seguindo um dos procedimentos acima, os dados estarão carregados e pron
 
 ```sql
 USE nba;
-SELECT * FROM nome_da_tabela;
+SELECT * FROM `time`;
 ```
 
-> **Obs**: Os dados podem demorar um pouco pra carregar dependendo do tamanho dos arquivos de dados.
+> **Obs**: Os dados podem demorar um pouco para serem importados, então espere pacientemente.
 
 
 ## Integrantes do grupo 7/contribuidores
