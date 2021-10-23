@@ -70,8 +70,9 @@ Table detalhes_jogo {
 }
 
 // Relacionamentos.
-Ref: jogo.id_time_casa > time.id_time
-Ref: jogo.id_time_visitante > time.id_time
 
 Ref: detalhes_jogo.id_jogo > jogo.id_jogo
 Ref: detalhes_jogo.id_time > time.id_time
+
+Ref: jogo.id_time_casa > time.id_time
+Ref: jogo.id_time_visitante > time.id_time
