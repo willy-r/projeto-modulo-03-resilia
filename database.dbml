@@ -1,0 +1,78 @@
+Project NBA {
+  database_type: 'MySQL'
+  Note: '''
+    # Banco de dados da NBA
+    
+    Banco de dados da **NBA** esquematizado pelo grupo 7 da Turma 8, para o projeto do módulo 3 da Resilia.
+    Aqui você encontrará uma rápida documentação contendo diagramas e a estruturação das tabelas, contendo anotações sobre alguns campos para melhor entendimento.
+  '''
+}
+
+Table time {
+  id_time varchar(10) [pk]
+  ano_fundacao year
+  abreviacao varchar(3)
+  cidade varchar(50) [note: 'Cidade que o time representa']
+  nome varchar(50)
+  arena varchar(50) [note: 'Arena oficial do time']
+  
+  note: 'Tabela de todos os times da NBA'
+}
+
+Table jogo {
+  id_jogo varchar(8) [pk]
+  data_jogo date
+  temporada year [note: 'Temporada que o jogo ocorreu']
+  id_time_casa varchar(10) [not null, note: 'Time da casa']
+  pts_casa mediumint [note: 'Total de pontos feitos pelo time da casa']
+  pct_cestas2pt_casa float [note: 'Porcentagem de cestas de 2 pontos do time da casa']
+  pct_cestasLL_casa float [note: 'Porcentagem de cestas de lance livre do time da casa']
+  pct_cestas3pt_casa float [note: 'Porcentagem de cestas de 3 pontos do time da casa']
+  qtd_ast_casa tinyint [note: 'Quantidade de assistências do time da casa']
+  qtd_reb_casa tinyint [note: 'Quantidade de rebotes do time da casa']
+  id_time_visitante varchar(10) [not null, note: 'Time visitante']
+  pts_visitante smallint [note: 'Total de pontos feitos pelo time visitante']
+  pct_cestas2pt_visitante float [note: 'Porcentagem de cestas de 2 pontos do time visitante']
+  pct_cestasLL_visitante float [note: 'Porcentagem de cestas de lance livre do time visitante']
+  pct_cestas3pt_visitante float [note: 'Porcentagem de cestas de 3 pontos do time visitante']
+  qtd_ast_visitante tinyint [note: 'Quantidade de assistências do time visitante']
+  qtd_reb_visitante tinyint [note: 'Quantidade de rebotes do time visitante']
+  vitoria_time_casa boolean [note: 'O time da casa ganhou?']
+  
+  note: 'Contém informações gerais sobre os times em cada jogo'
+}
+
+Table detalhes_jogo {
+  id_jogo varchar(8) [not null, note: 'Jogo do qual os datalhes do jogador pertence']
+  id_time varchar(10) [not null, note: 'Time do qual os detalhes do jogador pertence']
+  nome_jogador varchar(100)
+  min_jogador time [note: 'Tempo do jogador na quadra na partida']
+  qtd_cestas_feitas tinyint [note: 'Quantidade de cestas convertidas']
+  qtd_tentv_cestas tinyint [note: 'Quantidade de tentativas de cestas']
+  pct_aprov_cestas float [note: 'Porcentagem de aproveitamento de cestas']
+  qtd_cestas3pt_feitas tinyint [note: 'Quantidade de cestas de 3 pontos convertidas']
+  qtd_tentv_cestas3pt tinyint [note: 'Quantidade de tentativas de cestas de 3 pontos']
+  pct_aprov_cestas3pt float [note: 'Porcentagem de aproveitamento de cestas de 3 pontos']
+  qtd_cestasLL_feitas tinyint [note: 'Quantidade de cestas de lance livre convertidas']
+  qtd_tentv_cestasLL tinyint [note: 'Quantidade de tentativas de cestas de lance livre']
+  pct_aprov_cestasLL float [note: 'Porcentagem de aproveimento de cestas de lance livre']
+  qtd_reb_ofensivos tinyint [note: 'Quantidade de rebotes ofensivos']
+  qtd_reb_defensivos tinyint [note: 'Quantidade de rebotes defensivos']
+  qtd_reb_total tinyint [note: 'Quantidade total de rebotes']
+  qtd_ast tinyint [note: 'Quantidade de assistências']
+  qtd_roubos tinyint [note: 'Quantidade de roubos de bola']
+  qtd_bloqueios tinyint [note: 'Quantidade de bloqueios, os famosos "tocos"']
+  qtd_bolas_perdidas tinyint [note: 'Quantidade de bolas perdidas']
+  qtd_faltas tinyint [note: 'Quantidade de faltas feitas pelo jogador, na NBA o máximo é 5, depois disso o jogador é expulso']
+  pts tinyint [note: 'Total de pontos feitos pelo jogador na partida']
+  
+  note: 'Detalhes mais específicos dos jogos sobre cada jogador em diferentes partidas'
+}
+
+// Relacionamentos.
+
+Ref: detalhes_jogo.id_jogo > jogo.id_jogo
+Ref: detalhes_jogo.id_time > time.id_time
+
+Ref: jogo.id_time_casa > time.id_time
+Ref: jogo.id_time_visitante > time.id_time
