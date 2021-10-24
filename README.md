@@ -53,24 +53,30 @@ O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma ráp
 
 1. Baixe o [schema](nba-db/nba-db-schema.sql) para a criação do banco de dados e das tabelas presente na pasta `nba-db`.
 
-2. Carregue ele no MySQL Workbench (no canto superior esquerdo, vá em `Arquivo > Abrir script SQL` e escolha o arquivo baixado), e clique no símbolo de raio ⚡ para gerar o banco e as tabelas. Depois clique com o botão direito do mouse sobre os bancos listados na parte esquerda do programa e depois em "Refresh all", você verá o banco e as tabelas criadas.
+2. Carregue ele no MySQL Workbench (no canto superior esquerdo, vá em `File > Open SQL script` e escolha o arquivo baixado), e clique no símbolo de raio ⚡ para gerar o banco e as tabelas. Depois clique com o botão direito do mouse sobre os bancos listados na parte esquerda do programa e depois em "Refresh all", você verá o banco e as tabelas criadas.
 
-3. Baixe os arquivos `.csv` presentes [neste link](https://drive.google.com/drive/folders/1l6YSb2y33Mo2ki6glO3ulm8CpOA24PwX?usp=sharing), no MySQL Workbench, vá até as tabelas criadas, clique com o botão direito sobre uma tabela e vá em **Table data import wizard**, escolha o arquivo correspondente com a tabela criada (o arquivo e a tabela possuem o mesmo nome), clique **Next** em todas as etapas e espere o procedimento terminar.
+3. Baixe os arquivos `.sql` presentes [neste link](https://drive.google.com/drive/folders/1l6YSb2y33Mo2ki6glO3ulm8CpOA24PwX?usp=sharing), no MySQL Workbench, no canto superior esquerdo, vá em `File > Open SQL script` e escolha o arquivo `times.sql` e clique no símbolo de raio ⚡ para inserir os dados na tabela **time**. O processo é repetido para `jogos.sql` e depois `detalhes_jogo.sql`, **nessa ordem**.
 
 ### 2. Utilizando o dump do banco de dados
 
-1. Baixe a pasta contendo o [dump](#todo) do banco de dados disponível na pasta `nba-db`.
+1. Baixe a [pasta](nba-db/nba-dump-v1_1) contendo o dump do banco de dados disponível na pasta `nba-db`.
 
-2. No MySQL Workbench, na parte superior vá em `Servidor > Importar dados`, deixe a primeira opção marcada, escolha o caminho da pasta baixada e clique em **Começar importação**.
+2. No MySQL Workbench, na parte superior vá em `Server > Data import`, deixe a primeira opção marcada, escolha o caminho da pasta baixada e clique em **Start import**.
 
 Pronto, seguindo um dos procedimentos acima, os dados estarão carregados e prontos para serem consultados, se você quiser testar escreva no MySQL Workbench:
 
 ```sql
-USE nba;
-SELECT * FROM `time`;
+SELECT COUNT(*) FROM `time`;
+SELECT COUNT(*) FROM jogo;
+SELECT COUNT(*) FROM detalhes_jogo;
 ```
 
 > **Obs**: Os dados podem demorar um pouco para serem importados, então espere pacientemente.
+
+
+## Resultado do projeto
+
+As consultas/perguntas e gráficos feitos pelo grupo podem ser encontrados [**aqui**](consultas).
 
 
 ## Integrantes do grupo 7/contribuidores
