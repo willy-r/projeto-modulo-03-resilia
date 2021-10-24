@@ -1,8 +1,8 @@
 --
--- Cria o banco de dados (se for criar localmente, se não, ignora isso).
+-- Cria o banco de dados.
+-- Usa esse comando só se não for criar no Metabase, se não ignora isso.
 --
-DROP DATABASE IF EXISTS nba;
-CREATE DATABASE nba;
+CREATE DATABASE IF NOT EXISTS nba;
 USE nba;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS detalhes_jogo (
 --
 -- Cria os relacionamentos.
 --
-ALTER TABLE jogo ADD FOREIGN KEY (id_time_casa) REFERENCES time (id_time);
-ALTER TABLE jogo ADD FOREIGN KEY (id_time_visitante) REFERENCES time (id_time);
 ALTER TABLE detalhes_jogo ADD FOREIGN KEY (id_jogo) REFERENCES jogo (id_jogo);
-ALTER TABLE detalhes_jogo ADD FOREIGN KEY (id_time) REFERENCES time (id_time);
+ALTER TABLE detalhes_jogo ADD FOREIGN KEY (id_time) REFERENCES `time` (id_time);
+ALTER TABLE jogo ADD FOREIGN KEY (id_time_casa) REFERENCES `time` (id_time);
+ALTER TABLE jogo ADD FOREIGN KEY (id_time_visitante) REFERENCES `time` (id_time);
