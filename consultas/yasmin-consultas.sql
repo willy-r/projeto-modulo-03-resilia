@@ -1,6 +1,8 @@
-use t8grupo7;
+--
+-- Perguntas/consultas de Yasmin Reis.
+--
 
--- Quais são os 5 jogadores com maiores aproveitamentos de lance livres?
+-- Quais são os 5 jogadores com maiores aproveitamentos de lances livres?
 SELECT
 	nome_jogador, round (sum(pct_aprov_cestasLL),2) as porcentagem_total
 FROM detalhes_jogo
@@ -9,8 +11,7 @@ ORDER BY porcentagem_total DESC
 LIMIT 5;
 
 -- Quais são os 5 jogadores que mais roubaram bolas?
-
-SELECT 
+SELECT
 	nome_jogador, sum(qtd_roubos) as roubos_total
 FROM detalhes_jogo
 GROUP BY nome_jogador

@@ -46,6 +46,17 @@ O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma ráp
 
 [**Aqui**](https://dbdocs.io/willy-r/NBA) você encontrará a documentação completa do banco de dados utilizado pelo grupo 7, como esquemas, tabelas, relacionamentos, campos e seus significados e muito mais.
 
+### Diagrama ERR
+
+O diagrama ERR do banco utilizado pelo grupo, a gente decidiu não mexer muito no que já vinha, apenas removendo algumas colunas e deixando as que atendessem ao grupo para as perguntas geradas, ele também pode ser melhor visualizado na [documentação do banco de dados](https://dbdocs.io/willy-r/NBA).
+
+<p align="center">
+  <a href="https://dbdocs.io/willy-r/NBA?view=relationships" title="Diagrama ERR do banco de dados escolhido pelo Grupo 7">
+    <img src="imagens/nba-db-diagrama.png" alt="Imagem do diagrama EER do banco de dados" width="450
+    px">
+  </a>
+</p>
+
 
 ## Instalação e uso do banco de dados no MySQL Workbench
 

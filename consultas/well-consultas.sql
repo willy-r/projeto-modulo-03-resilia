@@ -1,7 +1,8 @@
-use t8grupo7;
+--
+-- Perguntas/consultas de Wellerson Ramos.
+--
 
--- Jogadores mais ofensivos
-
+-- Quais são os 5 jogadores mais ofensivos?
 SELECT 
     nome_jogador, 
     sum(qtd_cestas_feitas + qtd_cestas3pt_feitas + qtd_cestasLL_feitas + qtd_reb_ofensivos + qtd_ast + qtd_roubos - qtd_bolas_perdidas) as pontos_de_ofensividade
@@ -13,8 +14,7 @@ SELECT
  limit 5;
 
 
--- Jogadores mais defensivos
-
+-- Quais são os 5 jogadores mais defensivos?
 select
 nome_jogador, 
 sum(qtd_reb_defensivos + qtd_bloqueios) as pontos_de_defensividade
@@ -23,7 +23,7 @@ group by nome_jogador
 order by pontos_de_defensividade desc
 limit 5;
 
--- Cestinha de 3pts
+-- Quais são os 5 jogadores que mais pontuam com cestas de 3 pontos?
 select
 nome_jogador, 
 sum(qtd_cestas3pt_feitas) aproveitamento
@@ -32,4 +32,3 @@ group by nome_jogador
 having aproveitamento is not null
 order by aproveitamento desc
 limit 5;
-
