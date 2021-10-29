@@ -39,7 +39,7 @@ O conjunto de dados escolhido pelo grupo foi sobre a **NBA**, depois de uma ráp
 
 - [Metabase](https://www.metabase.com/) para a visualização dos dados a partir das perguntas dos integrantes do grupo.
 
-- [Google Sheets](https://docs.google.com/spreadsheets/) para a criação da apresetação do projeto.
+- [Google Slides](hhttps://www.google.com/slides/) para a criação da apresetação do projeto.
 
 
 ## Documentação do banco de dados
